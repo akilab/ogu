@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>建築基準法 | 法令上の制限 | 宅建学習サイト</title>
+  <style>
+    :root {
+      --bg: #fff9f5;
+      --surface: #ffffff;
+      --soft: #fff0e9;
+      --soft-2: #f9e6df;
+      --ink: #2f2926;
+      --muted: #786b64;
+      --accent: #d9675f;
+      --accent-2: #f29b76;
+      --line: #edd8cf;
+      --ok: #52786f;
+      --shadow: 0 14px 36px rgba(139, 92, 72, 0.11);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #fffaf7 0%, var(--bg) 38%, #ffffff 100%);
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+      line-height: 1.7;
+    }
+
+    a,
+    button {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .page {
+      width: min(1840px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .narrow {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 50%;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 10px 24px rgba(217, 103, 95, 0.22);
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.75);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .home-link:hover,
+    .home-link:focus-visible {
+      outline: 2px solid rgba(217, 103, 95, 0.2);
+      outline-offset: 2px;
+    }
+
+    .lesson-header {
+      padding: 34px 0 26px;
+    }
+
+    .lesson-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .lesson-label::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 14px;
+      font-size: clamp(36px, 6vw, 68px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 48rem;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .deck-shell {
+      padding: 18px 0 44px;
+    }
+
+    .deck-panel {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .deck-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 250, 247, 0.86);
+    }
+
+    .slide-title {
+      margin: 0;
+      font-size: clamp(20px, 3vw, 30px);
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    .counter {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .stage {
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      background: #fffdfb;
+    }
+
+    .slide-image {
+      display: block;
+      width: 100%;
+      max-width: 1672px;
+      height: auto;
+      border: 1px solid #f0dfd8;
+      border-radius: 8px;
+      object-fit: contain;
+      background: #ffffff;
+    }
+
+    .deck-controls {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: center;
+      padding: 16px 20px 20px;
+      border-top: 1px solid var(--line);
+      background: rgba(255, 250, 247, 0.86);
+    }
+
+    .control-button,
+    .dot {
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: #ffffff;
+    }
+
+    .control-button {
+      min-width: 118px;
+      min-height: 44px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .control-button:hover,
+    .control-button:focus-visible,
+    .dot:hover,
+    .dot:focus-visible {
+      outline: 2px solid rgba(217, 103, 95, 0.22);
+      outline-offset: 2px;
+    }
+
+    .dots {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .dot {
+      display: grid;
+      min-width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .dot.is-active {
+      border-color: var(--accent);
+      color: #ffffff;
+      background: var(--accent);
+    }
+
+    .quiz-section {
+      padding: 48px 0 68px;
+      background: #ffffff;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin-bottom: 8px;
+      font-size: 32px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .progress {
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: var(--soft);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .quiz-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .quiz-card {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr);
+      gap: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 10px 26px rgba(139, 92, 72, 0.07);
+    }
+
+    .quiz-number {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 50%;
+      color: #ffffff;
+      background: var(--accent);
+      font-weight: 700;
+    }
+
+    .quiz-card h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
+
+    .answer-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 8px 14px;
+      border: 1px solid rgba(217, 103, 95, 0.28);
+      border-radius: 999px;
+      color: var(--accent);
+      background: var(--soft);
+      font-weight: 700;
+    }
+
+    .answer-button:hover,
+    .answer-button:focus-visible {
+      outline: 2px solid rgba(217, 103, 95, 0.2);
+      outline-offset: 2px;
+    }
+
+    .answer {
+      display: none;
+      margin-top: 14px;
+      padding: 14px;
+      border-left: 4px solid var(--ok);
+      border-radius: 0 8px 8px 0;
+      background: #f4faf7;
+    }
+
+    .answer.is-open {
+      display: block;
+    }
+
+    .answer strong {
+      color: var(--ok);
+    }
+
+    .answer p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .site-footer {
+      padding: 28px 0 36px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      background: #ffffff;
+    }
+
+    @media (max-width: 820px) {
+      .topbar,
+      .deck-head,
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .deck-controls {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .dots {
+        grid-column: 1 / -1;
+        order: 3;
+        justify-content: flex-start;
+      }
+
+      .control-button {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .quiz-card {
+        grid-template-columns: 1fr;
+      }
+
+      .quiz-number {
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page,
+      .narrow {
+        width: min(100% - 24px, 1840px);
+      }
+
+      .stage {
+        padding: 10px;
+      }
+
+      .deck-head,
+      .deck-controls {
+        padding-right: 14px;
+        padding-left: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="narrow topbar">
+    <a class="brand" href="../index.html" aria-label="宅建学習サイト トップ">
+      <span class="brand-mark">宅</span>
+      <span>宅建学習サイト</span>
+    </a>
+    <a class="home-link" href="../index.html">トップへ戻る</a>
+  </header>
+
+  <main>
+    <section class="narrow lesson-header" aria-labelledby="lesson-title">
+      <p class="lesson-label">法令上の制限</p>
+      <h1 id="lesson-title">建築基準法</h1>
+      <p class="lead">
+        用途地域、接道義務、建蔽率・容積率、高さ制限、防火地域、建築確認、単体規定、地区計画等をスライドで確認し、下の一問一答で要点を復習します。
+      </p>
+    </section>
+
+    <section class="page deck-shell" aria-labelledby="slide-heading">
+      <div class="deck-panel">
+        <div class="deck-head">
+          <h2 class="slide-title" id="slide-heading">建築基準法概要</h2>
+          <div class="counter" id="slide-counter">1 / 18</div>
+        </div>
+        <div class="stage">
+          <img class="slide-image" id="slide-image" src="../images/kenchiku/1_building-standards-act-overview.png" alt="建築基準法概要">
+        </div>
+        <div class="deck-controls">
+          <button class="control-button" type="button" id="prev-slide">前へ</button>
+          <div class="dots" id="slide-dots" aria-label="スライド番号"></div>
+          <button class="control-button" type="button" id="next-slide">次へ</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-section" aria-labelledby="quiz-title">
+      <div class="narrow">
+        <div class="section-head">
+          <div>
+            <h2 id="quiz-title">一問一答</h2>
+            <p>問題は下に続きます。各カードの答えを開きながら、スライドの要点を確認してください。</p>
+          </div>
+          <div class="progress" id="quiz-progress">0 / 18 確認済み</div>
+        </div>
+        <div class="quiz-list" id="quiz-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="narrow site-footer">
+    <span>宅建学習サイト / 法令上の制限 / 建築基準法</span>
+  </footer>
+
+  <script>
+    const slides = [
+      { file: "../images/kenchiku/1_building-standards-act-overview.png", title: "建築基準法概要" },
+      { file: "../images/kenchiku/2_zoning-districts.png", title: "用途地域" },
+      { file: "../images/kenchiku/3_road-access-requirement-1.png", title: "接道義務 1" },
+      { file: "../images/kenchiku/4_road-access-requirement-2.png", title: "接道義務 2" },
+      { file: "../images/kenchiku/5_building-coverage-floor-area-ratio-1.png", title: "建蔽率・容積率 1" },
+      { file: "../images/kenchiku/5_building-coverage-floor-area-ratio-2.png", title: "建蔽率・容積率 2" },
+      { file: "../images/kenchiku/6_building-coverage-floor-area-ratio-3.png", title: "建蔽率・容積率 3" },
+      { file: "../images/kenchiku/7_height-restrictions-1.png", title: "高さ制限 1" },
+      { file: "../images/kenchiku/8_height-restrictions-2.png", title: "高さ制限 2" },
+      { file: "../images/kenchiku/9_height-restrictions-3.png", title: "高さ制限 3" },
+      { file: "../images/kenchiku/10_fire-prevention-districts-1.png", title: "防火地域 1" },
+      { file: "../images/kenchiku/11_fire-prevention-districts-2.png", title: "防火地域 2" },
+      { file: "../images/kenchiku/12_building-confirmation-1.png", title: "建築確認 1" },
+      { file: "../images/kenchiku/13_building-confirmation-2.png", title: "建築確認 2" },
+      { file: "../images/kenchiku/14_individual-regulations-1.png", title: "単体規定 1" },
+      { file: "../images/kenchiku/15_individual-regulations-2.png", title: "単体規定 2" },
+      { file: "../images/kenchiku/16_district-plans-1.png", title: "地区計画等 1" },
+      { file: "../images/kenchiku/17_district-plans-2.png", title: "地区計画等 2" }
+    ];
+
+    const questions = [
+      {
+        question: "建築基準法は、建物そのものの安全だけでなく、都市環境や周辺への影響も調整する法律である。○か×か。",
+        answer: "○",
+        explanation: "集団規定と単体規定の両方を意識して、どの規制が何を守るためのものか整理します。"
+      },
+      {
+        question: "用途地域では、地域ごとに建築できる建物の用途が制限される。○か×か。",
+        answer: "○",
+        explanation: "住宅、商業、工業など、地域の目的に合う建物利用へ誘導するための規制です。"
+      },
+      {
+        question: "接道義務では、原則として建築物の敷地が道路に一定以上接していることが求められる。○か×か。",
+        answer: "○",
+        explanation: "避難、通行、消防活動などに関係する重要テーマです。"
+      },
+      {
+        question: "接道義務の道路は、見た目が道路であれば建築基準法上の道路に必ず当たる。○か×か。",
+        answer: "×",
+        explanation: "建築基準法上の道路に当たるかどうかを確認する必要があります。"
+      },
+      {
+        question: "建蔽率は、敷地面積に対する建築面積の割合である。○か×か。",
+        answer: "○",
+        explanation: "建物を敷地にどれだけ広げて建てられるかを見る指標です。"
+      },
+      {
+        question: "容積率は、敷地面積に対する延べ面積の割合である。○か×か。",
+        answer: "○",
+        explanation: "建物全体のボリュームを調整する規制として押さえます。"
+      },
+      {
+        question: "建蔽率と容積率は、どちらも用途地域などによって上限が定められることがある。○か×か。",
+        answer: "○",
+        explanation: "用途地域ごとの制限と、前面道路などによる制限を組み合わせて確認します。"
+      },
+      {
+        question: "高さ制限は、周辺の日照、採光、通風などに関係する規制である。○か×か。",
+        answer: "○",
+        explanation: "道路斜線、隣地斜線、北側斜線など、目的と対象地域をセットで確認します。"
+      },
+      {
+        question: "北側斜線制限は、すべての用途地域で同じように適用される。○か×か。",
+        answer: "×",
+        explanation: "主に低層住居系など、どの地域で問題になるかをスライドで確認します。"
+      },
+      {
+        question: "高さ制限では、建物の高さだけでなく、道路や隣地との位置関係も重要になる。○か×か。",
+        answer: "○",
+        explanation: "斜線制限は距離や境界線との関係で考えるため、図で整理すると理解しやすくなります。"
+      },
+      {
+        question: "防火地域・準防火地域では、火災の拡大を防ぐため建築物の構造などに制限がかかる。○か×か。",
+        answer: "○",
+        explanation: "市街地の防火を目的とした規制で、建物の規模や階数と結びつけて復習します。"
+      },
+      {
+        question: "防火地域内では、どの建物も例外なく同じ構造にしなければならない。○か×か。",
+        answer: "×",
+        explanation: "地域区分、建物の階数、延べ面積などによって扱いが分かれます。"
+      },
+      {
+        question: "建築確認は、建築計画が建築基準関係規定に適合しているかを事前に確認する手続である。○か×か。",
+        answer: "○",
+        explanation: "工事前の確認、完了後の検査という流れで押さえると整理しやすいです。"
+      },
+      {
+        question: "建築確認が必要な建築物や工事は、地域や建物の種類によって異なる。○か×か。",
+        answer: "○",
+        explanation: "都市計画区域などの区域、建物の用途・規模、工事内容を組み合わせて判断します。"
+      },
+      {
+        question: "単体規定は、主に建築物そのものの安全性や衛生面に関する規定である。○か×か。",
+        answer: "○",
+        explanation: "構造、防火、採光、換気など、建物単体の性能に関わる規定として整理します。"
+      },
+      {
+        question: "単体規定は、都市計画区域内だけに適用される規定である。○か×か。",
+        answer: "×",
+        explanation: "集団規定との違いを押さえる問題です。単体規定は建物自体に着目します。"
+      },
+      {
+        question: "地区計画は、地区ごとのきめ細かなまちづくりルールを定める仕組みである。○か×か。",
+        answer: "○",
+        explanation: "用途地域より細かい単位で、建物の用途、形態、配置などを調整することがあります。"
+      },
+      {
+        question: "地区計画等の制限は、用途地域などの大きなルールとあわせて確認する必要がある。○か×か。",
+        answer: "○",
+        explanation: "複数の規制が重なることがあるため、どの順番で確認するかが実務的にも試験対策でも重要です。"
+      }
+    ];
+
+    const slideImage = document.getElementById("slide-image");
+    const slideHeading = document.getElementById("slide-heading");
+    const slideCounter = document.getElementById("slide-counter");
+    const dots = document.getElementById("slide-dots");
+    const quizList = document.getElementById("quiz-list");
+    const quizProgress = document.getElementById("quiz-progress");
+    let currentIndex = 0;
+    const openedAnswers = new Set();
+
+    slides.forEach((slide, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "dot";
+      button.textContent = String(index + 1);
+      button.setAttribute("aria-label", `${index + 1}枚目: ${slide.title}`);
+      button.addEventListener("click", () => showSlide(index));
+      dots.appendChild(button);
+    });
+
+    questions.forEach((item, index) => {
+      const card = document.createElement("article");
+      card.className = "quiz-card";
+      card.innerHTML = `
+        <div class="quiz-number">Q${index + 1}</div>
+        <div>
+          <h3>${item.question}</h3>
+          <button class="answer-button" type="button" aria-expanded="false" aria-controls="answer-${index}">答えを見る</button>
+          <div class="answer" id="answer-${index}">
+            <strong>${item.answer}</strong>
+            <p>${item.explanation}</p>
+          </div>
+        </div>
+      `;
+      const answerButton = card.querySelector(".answer-button");
+      const answer = card.querySelector(".answer");
+      answerButton.addEventListener("click", () => {
+        const isOpen = answer.classList.toggle("is-open");
+        answerButton.setAttribute("aria-expanded", String(isOpen));
+        answerButton.textContent = isOpen ? "答えを閉じる" : "答えを見る";
+        if (isOpen) {
+          openedAnswers.add(index);
+        } else {
+          openedAnswers.delete(index);
+        }
+        updateQuizProgress();
+      });
+      quizList.appendChild(card);
+    });
+
+    function showSlide(index) {
+      currentIndex = (index + slides.length) % slides.length;
+      const slide = slides[currentIndex];
+      slideImage.src = slide.file;
+      slideImage.alt = slide.title;
+      slideHeading.textContent = slide.title;
+      slideCounter.textContent = `${currentIndex + 1} / ${slides.length}`;
+      [...dots.children].forEach((dot, dotIndex) => {
+        dot.classList.toggle("is-active", dotIndex === currentIndex);
+        dot.setAttribute("aria-current", dotIndex === currentIndex ? "true" : "false");
+      });
+    }
+
+    function updateQuizProgress() {
+      quizProgress.textContent = `${openedAnswers.size} / ${questions.length} 確認済み`;
+    }
+
+    document.getElementById("prev-slide").addEventListener("click", () => showSlide(currentIndex - 1));
+    document.getElementById("next-slide").addEventListener("click", () => showSlide(currentIndex + 1));
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        showSlide(currentIndex - 1);
+      }
+      if (event.key === "ArrowRight") {
+        showSlide(currentIndex + 1);
+      }
+    });
+
+    showSlide(0);
+    updateQuizProgress();
+  </script>
+</body>
+</html>
