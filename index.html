@@ -166,35 +166,21 @@
       outline: none;
     }
 
-    .hero-placeholder {
+    .hero-visual {
       position: relative;
-      min-height: 420px;
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background:
-        linear-gradient(135deg, rgba(255, 240, 233, 0.86), rgba(255, 255, 255, 0.96)),
-        repeating-linear-gradient(45deg, rgba(217, 103, 95, 0.12) 0 1px, transparent 1px 18px);
+      background: #ffffff;
       box-shadow: var(--shadow);
     }
 
-    .placeholder-content {
-      position: absolute;
-      inset: 28px;
-      display: grid;
-      place-items: center;
-      border: 1px dashed #dfb7aa;
-      border-radius: 8px;
-      color: var(--muted);
-      text-align: center;
-      background: rgba(255, 255, 255, 0.42);
-    }
-
-    .placeholder-content strong {
+    .hero-image {
       display: block;
-      margin-bottom: 6px;
-      color: var(--ink);
-      font-size: 20px;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1586 / 992;
+      object-fit: cover;
     }
 
     .section {
@@ -323,10 +309,6 @@
         padding-top: 24px;
       }
 
-      .hero-placeholder {
-        min-height: 300px;
-      }
-
       .category-grid {
         grid-template-columns: 1fr;
       }
@@ -375,13 +357,8 @@
           <a class="button secondary" href="#categories">カテゴリ一覧</a>
         </div>
       </div>
-      <div class="hero-placeholder" aria-label="後で大きな教材イメージを配置する領域">
-        <div class="placeholder-content">
-          <div>
-            <strong>メインビジュアル予定地</strong>
-            <span>教材シリーズの大きな画像を後で配置</span>
-          </div>
-        </div>
+      <div class="hero-visual">
+        <img class="hero-image" src="./images/lp-image.png" alt="宅建学習用の教材、建物模型、都市計画図を並べたメインビジュアル">
       </div>
     </section>
 
