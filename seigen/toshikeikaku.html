@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>建築基準法 | 法令上の制限 | 宅建学習サイト</title>
+  <title>都市計画法 | 法令上の制限 | 宅建学習サイト</title>
   <style>
     :root {
       --bg: #fff9f5;
@@ -440,20 +440,20 @@
   <main>
     <section class="narrow lesson-header" aria-labelledby="lesson-title">
       <p class="lesson-label">法令上の制限</p>
-      <h1 id="lesson-title">建築基準法</h1>
+      <h1 id="lesson-title">都市計画法</h1>
       <p class="lead">
-        用途地域、接道義務、建蔽率・容積率、高さ制限、防火地域、建築確認、単体規定、地区計画等をスライドで確認し、試験対策のまとめと一問一答で要点を復習します。
+        都市計画の全体像、区域区分、用途地域、都市計画で定めるもの、開発許可をスライドで確認し、試験対策の用語整理と一問一答で要点を復習します。
       </p>
     </section>
 
     <section class="page deck-shell" aria-labelledby="slide-heading">
       <div class="deck-panel">
         <div class="deck-head">
-          <h2 class="slide-title" id="slide-heading">建築基準法概要</h2>
-          <div class="counter" id="slide-counter">1 / 19</div>
+          <h2 class="slide-title" id="slide-heading">都市計画とは</h2>
+          <div class="counter" id="slide-counter">1 / 6</div>
         </div>
         <div class="stage">
-          <img class="slide-image" id="slide-image" src="../images/kenchiku/1_building-standards-act-overview.png" alt="建築基準法概要">
+          <img class="slide-image" id="slide-image" src="../images/toshikeikaku/1_urban-planning-overview.png" alt="都市計画とは">
         </div>
         <div class="deck-controls">
           <button class="control-button" type="button" id="prev-slide">前へ</button>
@@ -470,7 +470,7 @@
             <h2 id="quiz-title">一問一答</h2>
             <p>問題は下に続きます。各カードの答えを開きながら、スライドの要点を確認してください。</p>
           </div>
-          <div class="progress" id="quiz-progress">0 / 19 確認済み</div>
+          <div class="progress" id="quiz-progress">0 / 6 確認済み</div>
         </div>
         <div class="quiz-list" id="quiz-list"></div>
       </div>
@@ -478,127 +478,49 @@
   </main>
 
   <footer class="narrow site-footer">
-    <span>宅建学習サイト / 法令上の制限 / 建築基準法</span>
+    <span>宅建学習サイト / 法令上の制限 / 都市計画法</span>
   </footer>
 
   <script>
     const slides = [
-      { file: "../images/kenchiku/1_building-standards-act-overview.png", title: "建築基準法概要" },
-      { file: "../images/kenchiku/2_zoning-districts.png", title: "用途地域" },
-      { file: "../images/kenchiku/3_road-access-requirement-1.png", title: "接道義務 1" },
-      { file: "../images/kenchiku/4_road-access-requirement-2.png", title: "接道義務 2" },
-      { file: "../images/kenchiku/5_building-coverage-floor-area-ratio-1.png", title: "建蔽率・容積率 1" },
-      { file: "../images/kenchiku/5_building-coverage-floor-area-ratio-2.png", title: "建蔽率・容積率 2" },
-      { file: "../images/kenchiku/6_building-coverage-floor-area-ratio-3.png", title: "建蔽率・容積率 3" },
-      { file: "../images/kenchiku/7_height-restrictions-1.png", title: "高さ制限 1" },
-      { file: "../images/kenchiku/8_height-restrictions-2.png", title: "高さ制限 2" },
-      { file: "../images/kenchiku/9_height-restrictions-3.png", title: "高さ制限 3" },
-      { file: "../images/kenchiku/10_fire-prevention-districts-1.png", title: "防火地域 1" },
-      { file: "../images/kenchiku/11_fire-prevention-districts-2.png", title: "防火地域 2" },
-      { file: "../images/kenchiku/12_building-confirmation-1.png", title: "建築確認 1" },
-      { file: "../images/kenchiku/13_building-confirmation-2.png", title: "建築確認 2" },
-      { file: "../images/kenchiku/14_individual-regulations-1.png", title: "単体規定 1" },
-      { file: "../images/kenchiku/15_individual-regulations-2.png", title: "単体規定 2" },
-      { file: "../images/kenchiku/16_district-plans-1.png", title: "地区計画等 1" },
-      { file: "../images/kenchiku/17_district-plans-2.png", title: "地区計画等 2" },
-      { file: "../images/kenchiku/18_point.png", title: "試験対策まとめ・用語整理" }
+      { file: "../images/toshikeikaku/1_urban-planning-overview.png", title: "都市計画とは" },
+      { file: "../images/toshikeikaku/2_area-classification.png", title: "区域の分類" },
+      { file: "../images/toshikeikaku/3_zoning-districts-overview.png", title: "用途地域とは" },
+      { file: "../images/toshikeikaku/4_urban-planning-items.png", title: "都市計画で定めるもの" },
+      { file: "../images/toshikeikaku/5_development-permission-overview.png", title: "開発許可とは" },
+      { file: "../images/toshikeikaku/6_exam-terms-summary.png", title: "試験対策用語整理" }
     ];
 
     const questions = [
       {
-        question: "建築基準法は、建物そのものの安全だけでなく、都市環境や周辺への影響も調整する法律である。○か×か。",
+        question: "都市計画法は、都市の健全な発展と秩序ある整備に関わる法律である。○か×か。",
         answer: "○",
-        explanation: "集団規定と単体規定の両方を意識して、どの規制が何を守るためのものか整理します。"
+        explanation: "まちづくり全体のルールとして、区域や用途、開発行為の制限を整理します。"
       },
       {
-        question: "用途地域では、地域ごとに建築できる建物の用途が制限される。○か×か。",
+        question: "都市計画区域は、市街化を進める区域と抑える区域などに区分されることがある。○か×か。",
         answer: "○",
-        explanation: "住宅、商業、工業など、地域の目的に合う建物利用へ誘導するための規制です。"
+        explanation: "区域区分は、市街化区域と市街化調整区域の違いを中心に押さえます。"
       },
       {
-        question: "接道義務では、原則として建築物の敷地が道路に一定以上接していることが求められる。○か×か。",
+        question: "用途地域は、土地の使い方を地域ごとに調整するための仕組みである。○か×か。",
         answer: "○",
-        explanation: "避難、通行、消防活動などに関係する重要テーマです。"
+        explanation: "住居系、商業系、工業系など、地域の性格に応じた土地利用を整理します。"
       },
       {
-        question: "接道義務の道路は、見た目が道路であれば建築基準法上の道路に必ず当たる。○か×か。",
-        answer: "×",
-        explanation: "建築基準法上の道路に当たるかどうかを確認する必要があります。"
-      },
-      {
-        question: "建蔽率は、敷地面積に対する建築面積の割合である。○か×か。",
+        question: "都市計画では、道路・公園などの都市施設を定めることがある。○か×か。",
         answer: "○",
-        explanation: "建物を敷地にどれだけ広げて建てられるかを見る指標です。"
+        explanation: "何を都市計画で決めるのか、用途地域などと分けて確認します。"
       },
       {
-        question: "容積率は、敷地面積に対する延べ面積の割合である。○か×か。",
+        question: "開発許可は、一定の開発行為について事前に許可を求める制度である。○か×か。",
         answer: "○",
-        explanation: "建物全体のボリュームを調整する規制として押さえます。"
+        explanation: "どの区域で、どの規模・内容の開発行為が問題になるかを復習します。"
       },
       {
-        question: "建蔽率と容積率は、どちらも用途地域などによって上限が定められることがある。○か×か。",
+        question: "都市計画法の学習では、区域名・制度名・許可の要否をセットで整理するとよい。○か×か。",
         answer: "○",
-        explanation: "用途地域ごとの制限と、前面道路などによる制限を組み合わせて確認します。"
-      },
-      {
-        question: "高さ制限は、周辺の日照、採光、通風などに関係する規制である。○か×か。",
-        answer: "○",
-        explanation: "道路斜線、隣地斜線、北側斜線など、目的と対象地域をセットで確認します。"
-      },
-      {
-        question: "北側斜線制限は、すべての用途地域で同じように適用される。○か×か。",
-        answer: "×",
-        explanation: "主に低層住居系など、どの地域で問題になるかをスライドで確認します。"
-      },
-      {
-        question: "高さ制限では、建物の高さだけでなく、道路や隣地との位置関係も重要になる。○か×か。",
-        answer: "○",
-        explanation: "斜線制限は距離や境界線との関係で考えるため、図で整理すると理解しやすくなります。"
-      },
-      {
-        question: "防火地域・準防火地域では、火災の拡大を防ぐため建築物の構造などに制限がかかる。○か×か。",
-        answer: "○",
-        explanation: "市街地の防火を目的とした規制で、建物の規模や階数と結びつけて復習します。"
-      },
-      {
-        question: "防火地域内では、どの建物も例外なく同じ構造にしなければならない。○か×か。",
-        answer: "×",
-        explanation: "地域区分、建物の階数、延べ面積などによって扱いが分かれます。"
-      },
-      {
-        question: "建築確認は、建築計画が建築基準関係規定に適合しているかを事前に確認する手続である。○か×か。",
-        answer: "○",
-        explanation: "工事前の確認、完了後の検査という流れで押さえると整理しやすいです。"
-      },
-      {
-        question: "建築確認が必要な建築物や工事は、地域や建物の種類によって異なる。○か×か。",
-        answer: "○",
-        explanation: "都市計画区域などの区域、建物の用途・規模、工事内容を組み合わせて判断します。"
-      },
-      {
-        question: "単体規定は、主に建築物そのものの安全性や衛生面に関する規定である。○か×か。",
-        answer: "○",
-        explanation: "構造、防火、採光、換気など、建物単体の性能に関わる規定として整理します。"
-      },
-      {
-        question: "単体規定は、都市計画区域内だけに適用される規定である。○か×か。",
-        answer: "×",
-        explanation: "集団規定との違いを押さえる問題です。単体規定は建物自体に着目します。"
-      },
-      {
-        question: "地区計画は、地区ごとのきめ細かなまちづくりルールを定める仕組みである。○か×か。",
-        answer: "○",
-        explanation: "用途地域より細かい単位で、建物の用途、形態、配置などを調整することがあります。"
-      },
-      {
-        question: "地区計画等の制限は、用途地域などの大きなルールとあわせて確認する必要がある。○か×か。",
-        answer: "○",
-        explanation: "複数の規制が重なることがあるため、どの順番で確認するかが実務的にも試験対策でも重要です。"
-      },
-      {
-        question: "建築基準法の学習では、用語の意味と規制の目的をセットで整理すると復習しやすい。○か×か。",
-        answer: "○",
-        explanation: "接道義務、建蔽率、容積率、高さ制限などは、何を調整する規制なのかまで結びつけて確認します。"
+        explanation: "試験では似た用語が並ぶため、区域・用途・開発許可を混同しないように整理します。"
       }
     ];
 
